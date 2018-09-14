@@ -4,13 +4,13 @@
 
 <%= form_for :calculator, url: { action: :new }, method: :get do |f|   %>
   <p>Сумма кредита</p>
-  <%= number_field_tag :a, params[:a],  style:"width:400px; height:30px;" %>
+  <%= number_field_tag :a, params[:a], min: 1, style:"width:400px; height:30px;" %>
   <p>Сумма первоначального взноса</p>
-  <%= number_field_tag :b, params[:b],  style:"width:400px; height:30px;" %>
-    <p>Процентная ставка</p>
-  <%= number_field_tag :c, params[:c],  style:"width:400px; height:30px;" %>
+  <%= number_field_tag :b, params[:b], min: 1,  style:"width:400px; height:30px;" %>
+    <p>Процентная ставка, %</p>
+  <%= number_field_tag :c, params[:c], min: 1,  style:"width:400px; height:30px;" %>
     <p>Срок кредитования</p>
-  <%= number_field_tag :d, params[:d],  style:"width:400px; height:30px;" %>
+  <%= number_field_tag :d, params[:d], min: 1, style:"width:400px; height:30px;" %>
   <br><br>
   <%= f.submit 'Calculate!' %>
 <% end %>
